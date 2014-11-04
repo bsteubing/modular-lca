@@ -234,7 +234,7 @@ class MainWindow(QtGui.QMainWindow):
             self.PSS_Widget = pssWidget()
             self.tab_widget_LEFT.addTab(self.PSS_Widget.PSSdataWidget, "PSS")
             self.tab_widget_LEFT.addTab(self.PSS_Widget.table_PSS_database, "PSS database")
-            self.tab_widget_LEFT.addTab(self.PSS_Widget.PP_analyzer, "PP Analyzer")
+            self.tab_widget_LEFT.addTab(self.PSS_Widget.PP_analyzer, "PP LCA")
             self.VL_LEFT.addLayout(self.PSS_Widget.HL_PSS_buttons)
             self.VL_LEFT.addLayout(self.PSS_Widget.HL_PSS_Database_buttons)
             self.tab_widget_RIGHT.addTab(self.PSS_Widget.webview, "Graph")
@@ -495,9 +495,11 @@ class MainWindow(QtGui.QMainWindow):
 def main():
     app = QtGui.QApplication(sys.argv)
     mw = MainWindow()
-    mw.setUpPSSEditor()
-    mw.lcaData.loadDatabase('ecoinvent 2.2')
-    mw.load_new_current_activity()
+
+    # auto-start of certain functionality
+    # mw.setUpPSSEditor()
+    # mw.lcaData.loadDatabase('ecoinvent 2.2')
+    # mw.load_new_current_activity()
 
     # wnd.resize(800, 600)
     mw.showMaximized()

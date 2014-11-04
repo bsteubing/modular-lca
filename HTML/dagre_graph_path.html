@@ -12,6 +12,16 @@
     fill: #fff;
   }
 
+/*  .node.product rect {
+    stroke: #FF00FF;
+    fill:   #FF00FF;
+  }
+
+  .node.process rect {
+    stroke: #FF00FF;
+    fill:   #FF00FF;
+  }*/
+
   .node.cut rect {
     stroke: #ff5063;
     fill:   #FFE6F0;
@@ -28,6 +38,12 @@
     fill: #E6F0FF;
   }
 
+  .node.activity_part_of_path rect {
+    stroke: #69b5f9;
+    stroke-width: 3px;
+    fill: #80B2FF;
+  }
+
   .node.chain rect {
     stroke: #f59861;
     fill: #FFF0E6;
@@ -37,6 +53,13 @@
     /*stroke: #FFFFFF;*/
     stroke: #00c262;
     stroke-width: 3px;
+  }
+
+  .node.output_part_of_path rect {
+    /*stroke: #FFFFFF;*/
+    stroke: #00c262;
+    stroke-width: 3px;
+    fill:   #00FF99;
   }
 
 /*  .node.output text {
@@ -137,14 +160,22 @@ graphdata.forEach(function(d) {
       // output = stateKeys[d.output];
   if (!source) {
     source = stateKeys[d.source] = { label: d.source, edges: [], class: d.class, output: d.source_out, product: d.source_product, 
-      pop: d.part_of_path };
+      pop: d.part_of_path, lca: '' };
   };
   if (!target) {
-    target = stateKeys[d.target] = { label: d.target, edges: [], class: "chain", output: d.target_out, product: d.target_product };
+    target = stateKeys[d.target] = { label: d.target, edges: [], class: 'chain', output: d.target_out, product: d.target_product, lca: ''};
   };
+
   if (d.class === "output") {
     stateKeys[d.source].class = "activity";
     stateKeys[d.target].class = "output";
+    // stateKeys[d.source].output = stateKeys[d.target].output;
+    // stateKeys[d.target].output = "";
+  };
+  if (d.class === "output" && d.part_of_path) {
+    stateKeys[d.source].class = "activity_part_of_path";
+    stateKeys[d.target].class = "output";
+    stateKeys[d.source].lca = d.lca_score;
   };
   source.edges.push(d);
   target.edges.push(d);
@@ -225,12 +256,12 @@ labels
   .attr("dy", "1em")
   .text(function(d) { return d.output; });
 
-// product:
+// LCA score
 labels
   .append("tspan")
   .attr("x", 0)
   .attr("dy", "1em")
-  .text(function(d) { return d.product; });
+  .text(function(d) { return d.lca; });
 
 // We need width and height for layout.
 labels.each(function(d) {
