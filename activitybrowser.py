@@ -19,24 +19,6 @@ from matplotlib.backends.backend_qt4agg import NavigationToolbar2QT as Navigatio
 import matplotlib.pyplot as plt
 
 
-# class TestMyIdea(QtGui.QWidget):
-#
-#     def __init__(self, parent=None):
-#         super(TestMyIdea, self).__init__(parent)
-#         print "was in TestMyIdea"
-#
-#     def load_Idea(self):
-#         table_databases = QtGui.QTableWidget()
-#         self.add_dock(table_databases, 'MyIdea',  QtCore.Qt.LeftDockWidgetArea)
-
-# class MySoftware():
-#
-#     def __init__(self, parent=None):
-#         mw = MainWindow()
-#
-#     def set_up_MP(self):
-#         print "was in TestMyIdea"
-
 class MainWindow(QtGui.QMainWindow):
     signal_add_to_chain = QtCore.pyqtSignal(MyQTableWidgetItem)
 
@@ -1012,14 +994,6 @@ be distributed to others without the consent of the author."""
             edit_keys=['amount'])
         self.table_AE_activity.setMaximumHeight(self.table_AE_activity.horizontalHeader().height()+self.table_AE_activity.rowHeight(0))
 
-
-# class TestMyIdea(MainWindow):
-#
-#     def __init__(self):
-#         # super(TestMyIdea, self).__init__(parent)
-#         print "was in TestMyIdea"
-#         table_databases = QtGui.QTableWidget()
-#         super(TestMyIdea, self).add_dock(table_databases, 'MyIdea',  QtCore.Qt.LeftDockWidgetArea)
 
 def main():
     app = QtGui.QApplication(sys.argv)
