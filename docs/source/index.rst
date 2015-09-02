@@ -27,7 +27,7 @@ Core features currently involve:
 Extensions
 ----------
 
-A tool for modeling life cycles based on a :ref:`Meta-Process Concept <metaprocess_introduction>`.
+Modular LCA approach - a tool for modeling life cycles based on :ref:`modules <metaprocess_introduction>`.
 
 
 Documentation

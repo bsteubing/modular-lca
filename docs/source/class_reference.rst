@@ -3,8 +3,8 @@
 Class reference
 ===============
 
-Meta-Process 
-------------
+Modules (formerly called 'meta-processes') 
+------------------------------------------
 
 .. automodule:: metaprocess
 
@@ -12,8 +12,8 @@ Meta-Process
     :members:
 
 
-Linked Meta-Process 
--------------------
+Linked Modules (formerly called 'linked Meta-Processes')
+--------------------------------------------------------
 
 .. automodule:: linkedmetaprocess
 
