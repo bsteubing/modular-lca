@@ -76,7 +76,7 @@ class MetaProcess(object):
         return output
 
     def construct_graph(self, db):
-        """Construct a list of edges.
+        """Construct a list of edges (excluding self links, e.g. an electricity input to electricity production).
 
         Args:
             * *db* (dict): The supply chain database
@@ -86,7 +86,7 @@ class MetaProcess(object):
 
         """
         return list(itertools.chain(*[[(tuple(e["input"]), k, e["amount"])
-                    for e in v["exchanges"] if e["type"] != "production"] for k, v in db.iteritems()]))
+                    for e in v["exchanges"] if e["type"] != "production" and e["input"] != k] for k, v in db.iteritems()]))
 
     def getScalingActivities(self, chain, edges):
         """Which are the scaling activities (at least one)?
