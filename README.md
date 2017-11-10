@@ -61,3 +61,24 @@ It is recommended that you create a dedicated virtual environment and install th
 Then use pip install to additionall install the following dependencies:
 
 pip install backports-abc==0.4 brightway2==0.14  bw2analyzer==0.7 bw2calc==0.17.1 bw2data==1.4 bw2ui==0.18.1 certifi==2016.8.31 colorama==0.3.7 configparser==3.5.0 docopt==0.6.2 entrypoints==0.2.2 Flask==0.10.1 functools32==3.2.3.post2 future==0.15.2 fuzzywuzzy==0.10.0 ipykernel==4.5.0 ipywidgets==5.2.2 itsdangerous==0.24 Jinja2==2.8 jsonschema==2.5.1 jupyter==1.0.0 jupyter-client==4.4.0 jupyter-console==5.0.0  jupyter-core==4.1.1 lxml==3.6.0  MarkupSafe==0.23 mistune==0.7.3 nbconvert==4.2.0 nbformat==4.1.0 nose==1.3.7 notebook==4.2.2 pefile==2016.3.28 progressbar-ipython==2.3.1 prompt-toolkit==1.0.7 Pygments==2.1.3 pypiwin32==219 pyzmq==15.4.0 qtconsole==4.2.1 requests==2.9.1 singledispatch==3.4.0.3 stats-arrays==0.4.1 tornado==4.4.1 unicodecsv==0.14.1 Unidecode==0.4.19 voluptuous==0.8.10 wcwidth==0.1.7 Werkzeug==0.11.5 widgetsnbextension==1.2.6  
+
+
+Then download this repository and navigate to the directory in your console containing the activitybrowser.py file and type:
+
+python activitybrowser.py
+
+to start the activity browser.
+
+
+The final step remaining is now to set a data directory for brightway2 and import characterizatin factors and LCI databases. 
+
+This cannot be done in the Activity Browser at this point, so in a console, type:
+
+bw2-web
+
+Set your data directory and import characterization factories.
+
+Then resort to the brightway2 documentation to import databases:
+
+https://brightwaylca.org/
+
