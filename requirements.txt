@@ -1,3 +1,4 @@
+# TODO: this is not upto date anymore
 bw2analyzer>=0.5.2
 bw2calc>=0.15.1
 bw2data>=1.0

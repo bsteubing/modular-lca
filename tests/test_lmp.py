@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from linkedmetaprocess import LinkedMetaProcessSystem
-from metaprocess import MetaProcess
+from modularsystem import ModularSystem
+from module import Module
 import pickle
 import time
 import os
@@ -13,7 +13,7 @@ def time_info(tic):
 
 tic = time.clock()
 
-lmp = LinkedMetaProcessSystem()
+lmp = ModularSystem()
 
 # load meta-process database
 dir = os.path.dirname(__file__)
