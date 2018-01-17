@@ -17,6 +17,9 @@ There are several use cases where "modules" can come in handy:
 The implementation and advantages of the Modular LCA approach are described in detail in this paper:
 https://link.springer.com/article/10.1007/s11367-015-1015-3
 
+> The analogy of Modular LCA are puzzle pieces, which can be combined in different ways to reflect alternative scenarios
+of the life cycle of products, or parts of supply or value chains.
+
 ### Example ###
 
 The following shows an example of how modules (left side) can be defined from existing unit processes. 
@@ -33,8 +36,7 @@ a comparative impact asssessment of all alternatives is fully automated (see her
 
 <img src="docs/images/transport_case_study.png"/>
 
-> The analogy of Modular LCA are puzzle pieces, which can be combined in different ways to reflect alternative scenarios
-of the life cycle of products, or parts of supply or value chains.
+
 
 Often a situation arises where there are several alternatives for successive processing steps. In such cases, many
 alternatives can arise quickly. Imagine a wood home heating, where you can choose from 3 different suppliers and two
